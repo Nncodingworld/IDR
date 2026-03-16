@@ -9,6 +9,7 @@ scroll-behavior:smooth;
 body{
 background:rgb(14, 14, 14);
 color:#ffffff;
+overflow-x:hidden;
 }
 /* NAVBAR DEFAULT (HERO AREA - GLASS) */
 
@@ -80,6 +81,53 @@ transparent,
 transparent
 );
 }
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+transition:0.3s;
+}
+
+/* MOBILE MENU */
+
+@media (max-width:768px){
+
+nav ul{
+position:absolute;
+top:80px;
+left:0;
+right:0;
+width:100%;
+background:black;
+flex-direction:column;
+align-items:center;
+padding:20px 0;
+display:none;
+}
+
+nav ul li{
+margin:15px 0;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.hamburger{
+display:flex;
+}
+
+}
 /* HERO */
 
 .hero{
@@ -89,13 +137,14 @@ justify-content:center;
 flex-direction:column;
 text-align:center;
 color:white;
-height:90vh;
+height:100vh;
 background:
 linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
 url("images/hero2.jpg");
 background-size:cover;
 background-position:center;
 background-repeat: no-repeat;
+background-position: fixed;
 }
 
 .hero h1{
@@ -103,6 +152,8 @@ font-size:50px;
 padding-top: 150px;
 margin-bottom:15px;
 animation:fadeUp 1s ease;
+line-height:1.2;
+word-wrap:break-word;
 }
 
 .hero p{
@@ -130,6 +181,8 @@ transform:scale(1.05);
 display:flex;
 margin-top:40px;
 gap:40px;
+flex-wrap:wrap;
+justify-content:center;
 }
 .stat{
 background:rgba(255,255,255,0.08);
@@ -149,32 +202,51 @@ font-size:14px;
 .about{
 display:flex;
 align-items:center;
-gap:60px;
+justify-content:center;
+gap:50px;
 padding:80px 8%;
 flex-wrap:wrap;
 }
 
 .about img{
-width:490px;
+width:100%;
+max-width:420px;
 border-radius:10px;
 }
 
 .about-text{
-max-width:500px;
+flex:1;
+min-width:280px;
+max-width:550px;
 }
 
 .about h2{
 margin-bottom:15px;
 color:#dcdcdc;
 }
-span{
-color:#ff6a00;
-}
+
 .about p{
 margin-bottom:20px;
 color:#b1b1b1;
+line-height:1.6;
+}
+@media(max-width:768px){
+
+.about{
+flex-direction:column;
+text-align:center;
+gap:30px;
 }
 
+.about-text{
+max-width:100%;
+}
+
+.about img{
+max-width:100%;
+}
+
+}
 /* SERVICES */
 
 
@@ -307,10 +379,11 @@ flex:1;
 }
 
 .feature-img img{
-width:80%;
 border-radius:10px;
 box-shadow:0 15px 40px rgba(0,0,0,0.1);
 transition:0.4s;
+width:100%;
+max-width:500px;
 }
 
 .feature-img img:hover{
@@ -543,3 +616,18 @@ transform:translateX(80px);
 .zoom{
 transform:scale(0.8);
 }
+@media(max-width:768px){
+
+.hero{
+padding-top:140px;
+}
+
+}
+@media(max-width:768px){
+
+.about{
+padding-top:140px;
+}
+
+}
+

@@ -53,3 +53,20 @@ nav.classList.remove("scrolled");
 }
 
 });
+
+
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+const links = document.querySelectorAll("#nav-links a");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+/* close menu when link clicked */
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
