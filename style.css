@@ -277,7 +277,7 @@ gap:30px;
 
 .model-card{
 position:relative;
-height:250px;
+min-height:250px;
 overflow:hidden;
 border-radius:12px;
 cursor:pointer;
@@ -328,6 +328,18 @@ font-size:14px;
 max-width:250px;
 }
 
+@media(max-width:768px){
+
+.card-overlay{
+opacity:1;
+background:rgba(0,0,0,0.65);
+}
+
+.model-card img{
+transform:none;
+}
+
+}
 
 .approach{
 padding:100px 8%;
@@ -619,6 +631,7 @@ transform:scale(0.8);
 @media(max-width:768px){
 
 .hero{
+   height: auto;
 padding-top:140px;
 }
 
